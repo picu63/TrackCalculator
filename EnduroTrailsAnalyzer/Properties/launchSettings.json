@@ -2,7 +2,7 @@
   "profiles": {
     "EnduroTrailsAnalyzer": {
       "commandName": "Project",
-      "commandLineArgs": ".\\TestFiles\\Twister.gpx"
+      "commandLineArgs": ".\\TestFiles\\twister.gpx"
     }
   }
 }

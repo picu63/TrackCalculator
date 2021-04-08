@@ -9,7 +9,7 @@ namespace EnduroCalculator.Calculators
     {
         private double _totalClimbing;
         private double _totalDescent;
-        List<double> _altitudes = new List<double>();
+        private readonly List<double> _altitudes = new List<double>();
         public override void Calculate(TrackPoint nextPoint)
         {
             _altitudes.Add(nextPoint.Altitude);

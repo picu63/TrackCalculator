@@ -6,12 +6,24 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\EnduroCalculator\EnduroCalculator.csproj" />
+    <ProjectReference Include="..\EnduroCalculator\TrackCalculator.csproj" />
     <ProjectReference Include="..\EnduroTrackReader\EnduroTrackReader.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="TestFiles\Twister.gpx">
+    <None Update="TestFiles\cyganka.gpx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="TestFiles\kamieniolom.gpx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="TestFiles\stary-zielony.gpx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="TestFiles\stefanka.gpx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="TestFiles\twister.gpx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>

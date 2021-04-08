@@ -11,7 +11,7 @@ using System.Globalization;
 
 namespace EnduroTrackReader
 {
-    public class TrackReader : ITrackReader
+    public class TrackReader
     {
         public TrackReader(string path)
         {
@@ -26,7 +26,7 @@ namespace EnduroTrackReader
             return track;
         }
 
-        public IEnumerable<TrackPoint> GetAllPoints()
+        private IEnumerable<TrackPoint> GetAllPoints()
         {
             var gpx = XNamespace.Get("http://www.topografix.com/GPX/1/1");
             var gpxDoc = XDocument.Load(_path);
