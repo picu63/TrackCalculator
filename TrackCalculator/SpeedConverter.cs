@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace EnduroCalculator
+﻿namespace TrackCalculator
 {
     internal static class SpeedConverter
     {

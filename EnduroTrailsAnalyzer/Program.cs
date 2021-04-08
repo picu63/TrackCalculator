@@ -3,9 +3,8 @@ using System.IO;
 using System.Linq;
 using System.Threading.Channels;
 using EnduroTrackReader;
-using EnduroCalculator;
-using EnduroCalculator.Calculators;
-using EnduroLibrary;
+using TrackCalculator;
+using TrackCalculator.Calculators;
 
 namespace EnduroTrailsAnalyzer
 {

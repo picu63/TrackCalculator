@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\TrackCalculator.Core\TrackCalculator.Core.csproj" />
+    <ProjectReference Include="..\TrackCalculator\TrackCalculator.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace EnduroCalculator.Interfaces
+namespace TrackCalculator.Interfaces
 {
     public interface ICalculatorCreator : ITrackCalculation, ICalculatorAdder, IFinalCalculation, ICalculatorOptions
     {

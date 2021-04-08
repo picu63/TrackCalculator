@@ -6,8 +6,8 @@ using System.Text;
 using System.Xml;
 using System.Xml.Linq;
 using System.Xml.XPath;
-using EnduroLibrary;
 using System.Globalization;
+using TrackCalculator.Models;
 
 namespace EnduroTrackReader
 {

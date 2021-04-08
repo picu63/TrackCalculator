@@ -1,7 +1,7 @@
 ﻿using System;
-using EnduroLibrary;
+using TrackCalculator.Models;
 
-namespace EnduroCalculator.Calculators
+namespace TrackCalculator.Calculators
 {
     public class DistanceCalculator : TrackCalculator
     {

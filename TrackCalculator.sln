@@ -5,8 +5,6 @@ VisualStudioVersion = 16.0.31112.23
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TrackCalculator", "TrackCalculator\TrackCalculator.csproj", "{C405250E-EB0D-4B00-9E4A-5527E8AF10E2}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TrackCalculator.Core", "TrackCalculator.Core\TrackCalculator.Core.csproj", "{2B84F2E7-91EB-495F-B06B-FB832F10431E}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EnduroTrackReader", "EnduroTrackReader\EnduroTrackReader.csproj", "{E7FAD0C0-B95A-422D-B947-EF6E9194A490}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EnduroTrailsAnalyzer", "EnduroTrailsAnalyzer\EnduroTrailsAnalyzer.csproj", "{292276A1-7E5C-484D-9F09-75E5515F83EA}"
@@ -21,10 +19,6 @@ Global
 		{C405250E-EB0D-4B00-9E4A-5527E8AF10E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C405250E-EB0D-4B00-9E4A-5527E8AF10E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C405250E-EB0D-4B00-9E4A-5527E8AF10E2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2B84F2E7-91EB-495F-B06B-FB832F10431E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2B84F2E7-91EB-495F-B06B-FB832F10431E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2B84F2E7-91EB-495F-B06B-FB832F10431E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2B84F2E7-91EB-495F-B06B-FB832F10431E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E7FAD0C0-B95A-422D-B947-EF6E9194A490}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E7FAD0C0-B95A-422D-B947-EF6E9194A490}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E7FAD0C0-B95A-422D-B947-EF6E9194A490}.Release|Any CPU.ActiveCfg = Release|Any CPU

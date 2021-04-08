@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using GeoCoordinatePortable;
 
-namespace EnduroLibrary
+namespace TrackCalculator.Models
 {
     public class TrackPoint
     {

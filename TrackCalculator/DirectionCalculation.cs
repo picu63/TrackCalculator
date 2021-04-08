@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using EnduroLibrary;
+﻿using TrackCalculator.Models;
 
-namespace EnduroCalculator
+namespace TrackCalculator
 {
     internal static class DirectionCalculation
     {

@@ -1,6 +1,6 @@
-﻿using EnduroLibrary;
+﻿using TrackCalculator.Models;
 
-namespace EnduroCalculator
+namespace TrackCalculator.Interfaces
 {
     public interface ITrackCalculator
     {

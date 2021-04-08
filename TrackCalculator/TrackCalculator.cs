@@ -1,7 +1,7 @@
-﻿using EnduroCalculator;
-using EnduroLibrary;
+﻿using TrackCalculator.Interfaces;
+using TrackCalculator.Models;
 
-namespace EnduroCalculator
+namespace TrackCalculator
 {
     public abstract class TrackCalculator : ITrackCalculator
     {

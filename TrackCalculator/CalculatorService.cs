@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using EnduroCalculator.Interfaces;
-using EnduroLibrary;
+using TrackCalculator.Interfaces;
+using TrackCalculator.Models;
 
-namespace EnduroCalculator
+namespace TrackCalculator
 {
     public class CalculatorService : ICalculatorCreator, IPrintCalculation
     {

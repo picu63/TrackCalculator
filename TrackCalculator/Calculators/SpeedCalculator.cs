@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using EnduroLibrary;
+using TrackCalculator.Models;
 
-namespace EnduroCalculator.Calculators
+namespace TrackCalculator.Calculators
 {
     public class SpeedCalculator : TrackCalculator
     {

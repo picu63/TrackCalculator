@@ -1,4 +1,4 @@
-﻿namespace EnduroCalculator
+﻿namespace TrackCalculator.Interfaces
 {
     public interface ITrackCalculation
     {
