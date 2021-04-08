@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31112.23
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TrackCalculator", "EnduroCalculator\TrackCalculator.csproj", "{C405250E-EB0D-4B00-9E4A-5527E8AF10E2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TrackCalculator", "TrackCalculator\TrackCalculator.csproj", "{C405250E-EB0D-4B00-9E4A-5527E8AF10E2}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TrackCalculatorCore", "EnduroLibrary\TrackCalculatorCore.csproj", "{2B84F2E7-91EB-495F-B06B-FB832F10431E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TrackCalculator.Core", "TrackCalculator.Core\TrackCalculator.Core.csproj", "{2B84F2E7-91EB-495F-B06B-FB832F10431E}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EnduroTrackReader", "EnduroTrackReader\EnduroTrackReader.csproj", "{E7FAD0C0-B95A-422D-B947-EF6E9194A490}"
 EndProject

@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\EnduroCalculator\TrackCalculator.csproj" />
+    <ProjectReference Include="..\TrackCalculator\TrackCalculator.csproj" />
     <ProjectReference Include="..\EnduroTrackReader\EnduroTrackReader.csproj" />
   </ItemGroup>
 
