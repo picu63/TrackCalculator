@@ -1,20 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using TrackCalculator.Interfaces;
 using TrackCalculator.Models;
 
 namespace TrackCalculator
 {
-    public class CalculatorService : ICalculatorCreator, IPrintCalculation
+    public class FluentTrackCalculator : IFluentTrackCalculator, ICalculatorAdder, IAllCalculating, ICalculatorOptions, IPrintCalculation
     {
         private readonly Track _track;
         private readonly List<ITrackCalculator> _calculators = new List<ITrackCalculator>();
-        public CalculatorService(Track track)
+        public FluentTrackCalculator(Track track)
         {
             this._track = track;
         }
 
-        public ICalculatorCreator AddCalculator(ITrackCalculator calculator)
+        public ICalculatorAdder AddCalculator(ITrackCalculator calculator)
         {
             if (calculator is null) throw new ArgumentNullException(nameof(calculator));
             this._calculators.Add(calculator);
@@ -39,7 +40,7 @@ namespace TrackCalculator
         private void SetCalculatorsOptions()
         {
             SetSlope(_options.Slope);
-            SetTimeFilter(_options.TimeFilter);
+            SetTimeFilter(_options.MaxTimeBetween2Points);
         }
 
         public void PrintAllCalculations()
@@ -53,7 +54,7 @@ namespace TrackCalculator
 
         public IPrintCalculation PrintCalculationFor(ITrackCalculator trackCalculator)
         {
-            if(!_calculators.Contains(trackCalculator)) throw new MissingMemberException(nameof(CalculatorService),nameof(trackCalculator));
+            if(!_calculators.Contains(trackCalculator)) throw new MissingMemberException(nameof(FluentTrackCalculator),nameof(trackCalculator));
             trackCalculator.PrintResult();
             return this;
         }
@@ -85,7 +86,7 @@ namespace TrackCalculator
         }
 
         private readonly CalculatorOptions _options = new();
-        public IFinalCalculation WithOptions(Action<CalculatorOptions> options)
+        public IAllCalculating WithOptions(Action<CalculatorOptions> options)
         {
             options(this._options);
             return this;
@@ -97,7 +98,7 @@ namespace TrackCalculator
         /// <summary>
         /// Time between two next points to reduce undesirable breaks (i.e. lost signal)
         /// </summary>
-        public TimeSpan TimeFilter { get; set; }
+        public TimeSpan MaxTimeBetween2Points { get; set; }
         /// <summary>
         /// Max percentage slope between 2 points to calculate if track is climb, flat or descent
         /// </summary>

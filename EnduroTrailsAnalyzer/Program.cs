@@ -5,6 +5,7 @@ using System.Threading.Channels;
 using EnduroTrackReader;
 using TrackCalculator;
 using TrackCalculator.Calculators;
+using TrackCalculator.Interfaces;
 
 namespace EnduroTrailsAnalyzer
 {
@@ -18,8 +19,8 @@ namespace EnduroTrailsAnalyzer
 
             var trackReader = new TrackReader(filePath);
             var track = trackReader.GetTrack();
-
-            new CalculatorService(track)
+            IFluentTrackCalculator fluentTrackCalculator = new FluentTrackCalculator(track);
+            fluentTrackCalculator
                 .AddCalculator(new DistanceCalculator())
                 .AddCalculator(new ElevationCalculator())
                 .AddCalculator(new SpeedCalculator())
@@ -27,7 +28,7 @@ namespace EnduroTrailsAnalyzer
                 .WithOptions(options =>
                 {
                     options.Slope = 2;
-                    options.TimeFilter = new TimeSpan(1, 30, 0);
+                    options.MaxTimeBetween2Points = new TimeSpan(1, 30, 0);
                 })
                 .CalculateAll()
                 .PrintAllCalculations();
