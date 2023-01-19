@@ -1,52 +1,51 @@
 ﻿using TrackCalculator.Models;
 
-namespace TrackCalculator
+namespace TrackCalculator;
+
+internal static class DirectionCalculation
 {
-    internal static class DirectionCalculation
+    internal static AltitudeDirection CalculateDirectionWithTolerance(TrackPoint previousPoint, TrackPoint currentPoint,
+        double tolerance = double.Epsilon)
     {
-        internal static AltitudeDirection CalculateDirectionWithTolerance(TrackPoint previousPoint, TrackPoint currentPoint,
-            double tolerance = double.Epsilon)
+        var previousAltitude = previousPoint.Altitude;
+        var currentAltitude= currentPoint.Altitude;
+        if (previousAltitude < currentAltitude - tolerance)
         {
-            var previousAltitude = previousPoint.Altitude;
-            var currentAltitude= currentPoint.Altitude;
-            if (previousAltitude < currentAltitude - tolerance)
-            {
-                return AltitudeDirection.Climbing;
-            }
-            if (previousAltitude > currentAltitude + tolerance)
-            {
-                return AltitudeDirection.Descent;
-            }
-            return AltitudeDirection.Flat;
+            return AltitudeDirection.Climbing;
         }
-
-        internal static AltitudeDirection CalculateDirectionWithSlope(TrackPoint previousPoint, TrackPoint currentPoint,
-            double slope = double.Epsilon)
+        if (previousAltitude > currentAltitude + tolerance)
         {
-            var slopeCalculated = CalculateSlope(previousPoint, currentPoint);
-            if (slopeCalculated < -slope/100)
-            {
-                return AltitudeDirection.Climbing;
-            }
-
-            if (slopeCalculated > slope/100)
-            {
-                return AltitudeDirection.Descent;
-            }
-            return AltitudeDirection.Flat;
+            return AltitudeDirection.Descent;
         }
-
-        private static double CalculateSlope(TrackPoint previousPoint, TrackPoint currentPoint)
-        {
-            var deltaH = previousPoint.Altitude - currentPoint.Altitude;
-            var deltaS = previousPoint.GetGeoCoordinate().GetDistanceTo(currentPoint.GetGeoCoordinate());
-            return deltaH / deltaS;
-        }
+        return AltitudeDirection.Flat;
     }
-    public enum AltitudeDirection
+
+    internal static AltitudeDirection CalculateDirectionWithSlope(TrackPoint previousPoint, TrackPoint currentPoint,
+        double slope = double.Epsilon)
     {
-        Climbing,
-        Descent,
-        Flat
+        var slopeCalculated = CalculateSlope(previousPoint, currentPoint);
+        if (slopeCalculated < -slope/100)
+        {
+            return AltitudeDirection.Climbing;
+        }
+
+        if (slopeCalculated > slope/100)
+        {
+            return AltitudeDirection.Descent;
+        }
+        return AltitudeDirection.Flat;
     }
+
+    private static double CalculateSlope(TrackPoint previousPoint, TrackPoint currentPoint)
+    {
+        var deltaH = previousPoint.Altitude - currentPoint.Altitude;
+        var deltaS = previousPoint.GetGeoCoordinate().GetDistanceTo(currentPoint.GetGeoCoordinate());
+        return deltaH / deltaS;
+    }
+}
+public enum AltitudeDirection
+{
+    Climbing,
+    Descent,
+    Flat
 }

@@ -1,9 +1,8 @@
 ﻿using System;
 
-namespace TrackCalculator.Interfaces
+namespace TrackCalculator.Interfaces;
+
+public interface ICalculatorOptions
 {
-    public interface ICalculatorOptions
-    {
-        IAllCalculating WithOptions(Action<CalculatorOptions> options);
-    }
+    IAllCalculating WithOptions(Action<CalculatorOptions> options);
 }

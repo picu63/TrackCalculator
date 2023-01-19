@@ -1,24 +1,23 @@
 ﻿using TrackCalculator.Interfaces;
 using TrackCalculator.Models;
 
-namespace TrackCalculator
-{
-    public abstract class TrackCalculator : ITrackCalculator
-    {
-        public virtual void Calculate(TrackPoint nextPoint)
-        {
-            if (CurrentPoint is null)
-            {
-                CurrentPoint = nextPoint;
-                return;
-            }
+namespace TrackCalculator;
 
-            CurrentDirection = DirectionCalculation.CalculateDirectionWithSlope(CurrentPoint, nextPoint, Slope);
+public abstract class TrackCalculator : ITrackCalculator
+{
+    public virtual void Calculate(TrackPoint nextPoint)
+    {
+        if (CurrentPoint is null)
+        {
+            CurrentPoint = nextPoint;
+            return;
         }
-        protected TrackPoint CurrentPoint { get; set; }
-        public virtual AltitudeDirection CurrentDirection { get; set; }
-        public virtual double Slope { get; set; }
-        public virtual double TimeFilter { get; set; }
-        public abstract void PrintResult();
+
+        CurrentDirection = DirectionCalculation.CalculateDirectionWithSlope(CurrentPoint, nextPoint, Slope);
     }
+    protected TrackPoint CurrentPoint { get; set; }
+    public virtual AltitudeDirection CurrentDirection { get; set; }
+    public virtual double Slope { get; set; }
+    public virtual double TimeFilter { get; set; }
+    public abstract void PrintResult();
 }

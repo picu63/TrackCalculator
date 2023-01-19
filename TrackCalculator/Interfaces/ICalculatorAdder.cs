@@ -1,7 +1,6 @@
-﻿namespace TrackCalculator.Interfaces
+﻿namespace TrackCalculator.Interfaces;
+
+public interface ICalculatorAdder : IAllCalculating, ICalculatorOptions
 {
-    public interface ICalculatorAdder : IAllCalculating, ICalculatorOptions
-    {
-        ICalculatorAdder AddCalculator(ITrackCalculator calculator);
-    }
+    ICalculatorAdder AddCalculator(ITrackCalculator calculator);
 }
